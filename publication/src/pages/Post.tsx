@@ -16,7 +16,9 @@ const Post = ()=>{
             setOnePost(data)
         }
         getPost();
+        
     },[id]);
+    
     return (
         <div className="post-container">
             <h1>Detail de la publication</h1>

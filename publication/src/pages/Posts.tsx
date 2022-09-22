@@ -5,10 +5,13 @@ import {PostData} from '../Interface'
 
 
 const Posts: React.FC =()=>{
+    
     const [allPosts, setAllPosts]=useState<PostData[] | null>(null);
     const [numberOfPosts, setnumberOfPosts]=useState<number>(5);
+
     const localOrStateNumber=()=>localStorage.getItem('number')||numberOfPosts;
     const localOrStateNum= localOrStateNumber();
+
     useEffect(()=>{
         const getPosts= async () => {
             const response=await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${localOrStateNum}`)
